@@ -89,7 +89,49 @@
       .toc a {
         font-weight: bold;
       }
+      .download-btn {
+        background-color: #03dac6;
+        color: #121212;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+      .download-btn:hover {
+        background-color: #028d8a;
+      }
     </style>
+    <script>
+      function downloadBatFile() {
+        const batContent = `@echo off
+:: #########################################################
+:: # Set Variables #
+:: #########################################################
+
+set Identifier=neon_server1
+set Port=5555
+set CustomerKey=a54iesJ4Ga0MC1Pt
+set ProviderKey=AM0hLmhwg75xIBdH
+set Slots=5
+set QueryPort=27015
+set OCA=YOUREXTERNALIP
+
+MistServer.exe -log -identifier=%Identifier% -port=%Port% -CustomerKey=%CustomerKey% -ProviderKey=%ProviderKey% -slots=%Slots% -QueryPort=%QueryPort% -OverrideConnectionAddress=%OCA%
+exit`;
+
+        const blob = new Blob([batContent], { type: "text/plain" });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Server1.bat";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      }
+    </script>
   </head>
   <body>
     <h1>Guía de Configuración del Servidor Dedicado de Last Oasis</h1>
@@ -186,6 +228,9 @@
           `Server2.bat`, `Server3.bat`, etc.
         </li>
       </ul>
+      <button onclick="downloadBatFile()" class="download-btn">
+        Descargar ejemplo de Server1.bat
+      </button>
     </div>
 
     <div class="step" id="step5">
@@ -289,7 +334,10 @@ set OCA=YOUREXTERNALIP
 MistServer.exe -log -identifier=%Identifier% -port=%Port% -CustomerKey=%CustomerKey% -ProviderKey=%ProviderKey% -slots=%Slots% -QueryPort=%QueryPort% -OverrideConnectionAddress=%OCA%
 exit
 </code>
-        </pre>
+      </pre>
+      <button onclick="downloadBatFile()" class="download-btn">
+        Descargar archivo .bat con esta configuración
+      </button>
     </div>
 
     <div class="step" id="step12">
