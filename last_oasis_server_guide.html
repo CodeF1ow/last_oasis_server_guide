@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Configuración del Servidor Dedicado de Last Oasis</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.8;
+        background-color: #121212; /* Fondo oscuro */
+        color: #e0e0e0; /* Texto claro */
+      }
+      h1,
+      h2,
+      h3 {
+        color: #bb86fc; /* Títulos en púrpura */
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      h2 {
+        border-bottom: 2px solid #03dac6; /* Línea de separación en verde */
+        padding-bottom: 5px;
+        margin-top: 40px;
+      }
+      ul {
+        margin-left: 20px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      code {
+        background-color: #1e1e1e; /* Fondo oscuro para código */
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+        color: #03dac6; /* Texto del código en verde */
+      }
+      pre {
+        background-color: #1e1e1e; /* Fondo oscuro para bloques de código */
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        border: 1px solid #333; /* Borde sutil */
+        margin-bottom: 20px;
+      }
+      .step {
+        margin-bottom: 30px;
+        padding: 15px;
+        background-color: #1e1e1e; /* Fondo oscuro para pasos */
+        border: 1px solid #333;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .highlight {
+        color: #cf6679; /* Texto destacado en rojo */
+        font-weight: bold;
+      }
+      .note {
+        background-color: #2a2a2a; /* Fondo oscuro para notas */
+        padding: 10px;
+        border-left: 4px solid #03dac6; /* Línea verde */
+        margin: 20px 0;
+        border-radius: 3px;
+      }
+      a {
+        color: #03dac6; /* Enlaces en verde */
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .toc {
+        background-color: #1e1e1e; /* Fondo oscuro para tabla de contenido */
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      .toc ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .toc li {
+        margin-bottom: 10px;
+      }
+      .toc a {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Guía de Configuración del Servidor Dedicado de Last Oasis</h1>
+
+    <div class="toc">
+      <h2>Contenido:</h2>
+      <ul>
+        <li><a href="#step1">Paso 1: Acceder a Steam</a></li>
+        <li><a href="#step2">Paso 2: Instalar el servidor dedicado</a></li>
+        <li>
+          <a href="#step3">Paso 3: Ubicación del archivo `MistServer.exe`</a>
+        </li>
+        <li><a href="#step4">Paso 4: Crear un archivo `.bat`</a></li>
+        <li>
+          <a href="#step5">Paso 5: Configurar el explorador de archivos</a>
+        </li>
+        <li><a href="#step6">Paso 6: Cambiar el archivo `.txt` a `.bat`</a></li>
+        <li>
+          <a href="#step7"
+            >Paso 7: Iniciar sesión en la página de control del servidor</a
+          >
+        </li>
+        <li>
+          <a href="#step8">Paso 8: Generar una nueva clave de proveedor</a>
+        </li>
+        <li>
+          <a href="#step9"
+            >Paso 9: Copiar la información del archivo de documentación
+            oficial</a
+          >
+        </li>
+        <li>
+          <a href="#step10">Paso 10: Configurar la dirección IP externa</a>
+        </li>
+        <li>
+          <a href="#step11"
+            >Paso 11: Configuración avanzada del archivo `.bat`</a
+          >
+        </li>
+        <li><a href="#step12">Paso 12: Administración de Realms</a></li>
+        <li><a href="#step13">Paso 13: Gestión de Oasis</a></li>
+        <li><a href="#support">Soporte adicional</a></li>
+      </ul>
+    </div>
+
+    <div class="step" id="step1">
+      <h2>Paso 1: Acceder a Steam</h2>
+      <p>Abre tu cuenta de Steam.</p>
+      <ul>
+        <li>Ve a la sección <strong>Library</strong> (Biblioteca).</li>
+        <li>
+          En la columna izquierda, asegúrate de que estén seleccionadas las
+          opciones:
+        </li>
+        <ul>
+          <li><strong>Games</strong> (Juegos)</li>
+          <li><strong>Tools</strong> (Herramientas)</li>
+        </ul>
+      </ul>
+    </div>
+
+    <div class="step" id="step2">
+      <h2>Paso 2: Instalar el servidor dedicado</h2>
+      <p>Busca e instala el servidor dedicado de "Last Oasis".</p>
+      <ul>
+        <li>
+          Si tienes un servidor Windows con acceso root, instala Steam en la
+          máquina y comienza la instalación.
+        </li>
+      </ul>
+    </div>
+
+    <div class="step" id="step3">
+      <h2>Paso 3: Ubicación del archivo `MistServer.exe`</h2>
+      <p>
+        Una vez finalizada la instalación, dirígete al directorio de instalación
+        donde se encuentra `MistServer.exe`.
+      </p>
+      <p>Ruta típica:</p>
+      <code
+        >Steam\LastOasis\steamapps\common\Last Oasis - Dedicated Server</code
+      >
+    </div>
+
+    <div class="step" id="step4">
+      <h2>Paso 4: Crear un archivo `.bat`</h2>
+      <p>
+        Crea un archivo de texto llamado <strong>`Server1.bat`</strong> en la
+        misma ubicación que `MistServer.exe`.
+      </p>
+      <ul>
+        <li>
+          Puedes crear más servidores creando archivos adicionales como
+          `Server2.bat`, `Server3.bat`, etc.
+        </li>
+      </ul>
+    </div>
+
+    <div class="step" id="step5">
+      <h2>Paso 5: Configurar el explorador de archivos</h2>
+      <p>
+        Ve al <strong>Panel de Control</strong> y abre
+        <strong>Opciones del Explorador de archivos</strong>.
+      </p>
+      <ul>
+        <li>
+          Desactiva la opción
+          <strong>Ocultar extensiones de tipos de archivo conocidos</strong>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="step" id="step6">
+      <h2>Paso 6: Cambiar el archivo `.txt` a `.bat`</h2>
+      <p>
+        Renombra el archivo `Server1.txt` a `Server1.bat` eliminando la
+        extensión `.txt`.
+      </p>
+    </div>
+
+    <div class="step" id="step7">
+      <h2>Paso 7: Iniciar sesión en la página de control del servidor</h2>
+      <p>
+        Inicia sesión en la página de control del servidor de "Last Oasis"
+        usando tu cuenta de Steam:
+      </p>
+      <ul>
+        <li>
+          URL:
+          <a href="http://myrealm.lastoasis.gg/Account/Signin"
+            >http://myrealm.lastoasis.gg/Account/Signin</a
+          >
+        </li>
+        <li>Ve a la pestaña <strong>Settings</strong> (Configuración).</li>
+      </ul>
+    </div>
+
+    <div class="step" id="step8">
+      <h2>Paso 8: Generar una nueva clave de proveedor</h2>
+      <p>
+        Crea una nueva <strong>Provider Key</strong>. La
+        <strong>Customer Key</strong> no puede ser cambiada.
+      </p>
+      <ul>
+        <li>Sigue las instrucciones para generar la clave.</li>
+      </ul>
+    </div>
+
+    <div class="step" id="step9">
+      <h2>
+        Paso 9: Copiar la información del archivo de documentación oficial
+      </h2>
+      <p>
+        Copia la información del archivo de documentación oficial para el
+        archivo `.bat` y pégala en el archivo creado (`Server1.bat`).
+      </p>
+    </div>
+
+    <div class="step" id="step10">
+      <h2>Paso 10: Configurar la dirección IP externa</h2>
+      <p>Determina tu dirección IP externa usando un sitio web como:</p>
+      <ul>
+        <li>
+          <a href="https://whatismyipaddress.com/de/meine-ip"
+            >https://whatismyipaddress.com/de/meine-ip</a
+          >
+        </li>
+      </ul>
+      <div class="note">
+        <strong>Nota:</strong> Si estás alojando el servidor en casa, tu
+        dirección IP puede cambiar cada 24 horas o cuando apagues el router.
+        Actualiza la dirección IP en el archivo `.bat` según sea necesario.
+      </div>
+    </div>
+
+    <div class="step" id="step11">
+      <h2>Paso 11: Configuración avanzada del archivo `.bat`</h2>
+      <p>
+        Se puede crear un archivo `.bat` más estructurado para una mejor
+        visibilidad y organización.
+      </p>
+      <pre>
+<code>
+@echo off
+:: #########################################################
+:: # Set Variables #
+:: #########################################################
+
+set Identifier=neon_server1
+set Port=5555
+set CustomerKey=a54iesJ4Ga0MC1Pt
+set ProviderKey=AM0hLmhwg75xIBdH
+set Slots=5
+set QueryPort=27015
+set OCA=YOUREXTERNALIP
+
+MistServer.exe -log -identifier=%Identifier% -port=%Port% -CustomerKey=%CustomerKey% -ProviderKey=%ProviderKey% -slots=%Slots% -QueryPort=%QueryPort% -OverrideConnectionAddress=%OCA%
+exit
+</code>
+        </pre>
+    </div>
+
+    <div class="step" id="step12">
+      <h2>Paso 12: Administración de Realms</h2>
+      <p>
+        Es posible tener más de 2 servidores activos al mismo tiempo. Cada
+        servidor equivale a una Oasis en el Realm.
+      </p>
+      <ul>
+        <li>Para administrar múltiples servidores:</li>
+        <ul>
+          <li>
+            Cambia los puertos (<code>ports</code>) y los puertos de consulta
+            (<code>QueryPorts</code>) para evitar conflictos.
+          </li>
+          <li>
+            Ejemplo de rangos de puertos:
+            <ul>
+              <li>Puertos: <code>29015-29017</code></li>
+              <li>Puertos de consulta: <code>5565-5567</code></li>
+            </ul>
+          </li>
+          <li>
+            El identificador (<code>identifier</code>) puede ser el mismo nombre
+            o diferente para cada servidor.
+          </li>
+          <li>
+            Puedes ver la configuración de los servidores en el dashboard bajo
+            <strong>Game Servers</strong>.
+          </li>
+        </ul>
+      </ul>
+      <p>**Configuración del Realm:**</p>
+      <ul>
+        <li>
+          Una vez creado un Realm, puedes ir a <strong>View</strong> para
+          mostrar los ajustes correspondientes.
+        </li>
+        <li>
+          Puedes cambiar el nombre del Realm para su visualización en el juego,
+          ajustar multiplicadores, administradores y mucho más.
+        </li>
+        <li>Más opciones estarán disponibles en el futuro.</li>
+      </ul>
+    </div>
+
+    <div class="step" id="step13">
+      <h2>Paso 13: Gestión de Oasis</h2>
+      <p>
+        Puedes gestionar varias Oasis para los servidores. Sin embargo, solo 3
+        Oasis estarán activas cuando se inicien 3 servidores.
+      </p>
+      <ul>
+        <li>
+          Para iniciar mapas de eventos en diferentes sistemas raíz o sistemas
+          locales:
+        </li>
+        <ul>
+          <li>
+            Las claves <strong>Provider Key</strong> y
+            <strong>Customer Key</strong> deben ser las mismas que las
+            utilizadas en el mismo Realm.
+          </li>
+          <li>
+            Los mapas de eventos pueden habilitarse en el punto
+            <strong>Events</strong> en el dashboard.
+          </li>
+        </ul>
+      </ul>
+    </div>
+
+    <div class="step" id="support">
+      <h2>Soporte adicional</h2>
+      <p>
+        Si tienes preguntas, puedes consultar a los desarrolladores amigables o
+        a las personas en el canal de Discord:
+      </p>
+      <ul>
+        <li>
+          Enlace al canal de Discord:
+          <a
+            href="https://discord.com/channels/440538424991154177/870332804578304070/870475904625836032"
+            >https://discord.com/channels/440538424991154177/870332804578304070/870475904625836032</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
